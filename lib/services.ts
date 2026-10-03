@@ -238,24 +238,24 @@ const es: Record<ServiceKey, Service> = {
     summary: "Preparación fiscal basada en registros organizados y una coordinación práctica.",
     intro: "Un buen proceso fiscal para negocios depende de registros claros, preguntas oportunas y coordinación con la operación real del negocio. Ayudamos a organizar la preparación sin prometer resultados específicos.",
     alt: "Un dueño de negocio revisando registros organizados con un asesor",
-    benefits: ["Revisión de registros disponibles", "Coordinación con la información de bookkeeping", "Preparación según el alcance acordado", "Preguntas y fechas de seguimiento claras"],
+    benefits: ["Revisión de registros disponibles", "Coordinación con la información contable", "Preparación según el alcance acordado", "Preguntas y fechas de seguimiento claras"],
     steps: [
       { title: "Alcance", text: "Aclaramos el tipo de negocio, las necesidades fiscales y los registros disponibles." },
       { title: "Conciliación", text: "Organizamos los registros e identificamos preguntas antes de preparar." },
       { title: "Preparación", text: "La información fiscal se prepara dentro del alcance confirmado." },
-      { title: "Coordinación", text: "Conectamos los próximos pasos con bookkeeping y planificación futura." },
+      { title: "Coordinación", text: "Conectamos los próximos pasos con la contabilidad y la planificación futura." },
     ],
     signatureTitle: "De los registros a la declaración", signatureIntro: "La preparación es más fácil cuando la información que la respalda está conectada.",
     signatureItems: [
       { label: "Actividad", text: "Entender cómo operó el negocio durante el periodo fiscal." },
       { label: "Registros", text: "Revisar ingresos, gastos e información contable disponible." },
       { label: "Preguntas", text: "Resolver datos faltantes o dudas de clasificación antes de avanzar." },
-      { label: "Próximo año", text: "Identificar dónde bookkeeping o planificación pueden mejorar el siguiente ciclo." },
+      { label: "Próximo año", text: "Identificar dónde la contabilidad o la planificación pueden mejorar el siguiente ciclo." },
     ],
     faqs: [
-      { q: "¿Mis libros deben estar completos primero?", a: "Registros actuales y precisos facilitan la preparación. Podemos conversar si hace falta trabajo de bookkeeping antes de comenzar." },
+      { q: "¿Mis libros deben estar completos primero?", a: "Registros actuales y precisos facilitan la preparación. Podemos conversar si hace falta trabajo contable antes de comenzar." },
       { q: "¿Trabajan con negocios nuevos?", a: "Sí. Una consulta permite entender la etapa del negocio, los registros disponibles y el apoyo adecuado." },
-      { q: "¿Pueden coordinar impuestos y bookkeeping?", a: "Sí. Conectar estos servicios puede reducir información faltante y crear un proceso más organizado." },
+      { q: "¿Pueden coordinar los impuestos y la contabilidad?", a: "Sí. Conectar estos servicios puede reducir información faltante y crear un proceso más organizado." },
     ],
   },
   planning: {
@@ -286,7 +286,7 @@ const es: Record<ServiceKey, Service> = {
   bookkeeping: {
     ...en.bookkeeping, slug: "contabilidad-bookkeeping", title: "Contabilidad y Bookkeeping", shortTitle: "Contabilidad y Bookkeeping", eyebrow: "Registros más claros",
     summary: "Registros financieros organizados para entender mejor lo que ocurre en el negocio.",
-    intro: "El bookkeeping constante crea un registro financiero útil, no solo una lista de transacciones. Nuestro enfoque prioriza organización, conciliación y reportes que pueden apoyar los impuestos y las decisiones del negocio.",
+    intro: "Una contabilidad constante crea un registro financiero útil, no solo una lista de transacciones. Nuestro enfoque prioriza la organización, la conciliación y los reportes que pueden apoyar los impuestos y las decisiones del negocio.",
     alt: "Una dueña de negocio conciliando recibos y registros financieros",
     benefits: ["Organización de transacciones", "Conciliación de cuentas", "Registros financieros consistentes", "Reportes prácticos para mayor claridad"],
     steps: [
@@ -305,7 +305,7 @@ const es: Record<ServiceKey, Service> = {
     faqs: [
       { q: "¿Pueden ordenar registros anteriores?", a: "Una consulta permite evaluar los registros y decidir si se necesita un proyecto de limpieza antes del servicio recurrente." },
       { q: "¿Con qué frecuencia se realiza?", a: "La frecuencia depende del negocio y del alcance. El apoyo mensual es una opción común." },
-      { q: "¿El bookkeeping ayuda con los impuestos?", a: "Los registros organizados pueden hacer la preparación fiscal más eficiente y reducir preguntas pendientes." },
+      { q: "¿La contabilidad ayuda con los impuestos?", a: "Los registros organizados pueden hacer la preparación fiscal más eficiente y reducir preguntas pendientes." },
     ],
   },
   payroll: {
@@ -329,7 +329,7 @@ const es: Record<ServiceKey, Service> = {
     ],
     faqs: [
       { q: "¿La nómina es un servicio recurrente?", a: "Sí. Se organiza con un calendario apropiado para el negocio y el alcance acordado." },
-      { q: "¿Puede coordinarse con bookkeeping?", a: "Sí. La coordinación ayuda a reflejar de forma consistente la actividad de nómina en los registros." },
+      { q: "¿Puede coordinarse con la contabilidad?", a: "Sí. La coordinación ayuda a reflejar de forma consistente la actividad de nómina en los registros." },
       { q: "¿Ayudan a negocios nuevos?", a: "Una consulta puede identificar necesidades de configuración y si el servicio es apropiado." },
     ],
   },
@@ -338,7 +338,7 @@ const es: Record<ServiceKey, Service> = {
     summary: "Apoyo práctico para organizar los primeros pasos de un negocio nuevo.",
     intro: "Iniciar un negocio implica decisiones administrativas, fiscales y de registros. Ayudamos a organizar el proceso e identificar próximos pasos. Este servicio no constituye asesoría legal.",
     alt: "Una emprendedora organizando carpetas en un espacio de trabajo nuevo",
-    benefits: ["Organización inicial del negocio", "Consideraciones fiscales y de registros", "Coordinación de próximos pasos", "Conexión con bookkeeping y nómina"],
+    benefits: ["Organización inicial del negocio", "Consideraciones fiscales y de registros", "Coordinación de próximos pasos", "Conexión con contabilidad y nómina"],
     steps: [
       { title: "Aclarar", text: "Conversamos sobre la actividad, los propietarios y la etapa actual." },
       { title: "Organizar", text: "Trazamos los pasos administrativos y fiscales dentro de nuestro alcance." },
@@ -349,12 +349,12 @@ const es: Record<ServiceKey, Service> = {
     signatureItems: [
       { label: "Base", text: "Definir la actividad y las preguntas que requieren orientación profesional." },
       { label: "Configuración", text: "Organizar pasos fiscales y administrativos dentro del alcance." },
-      { label: "Sistemas", text: "Preparar rutinas de bookkeeping, nómina y documentos según sea necesario." },
+      { label: "Sistemas", text: "Preparar rutinas de contabilidad, nómina y documentos según sea necesario." },
       { label: "Primer ciclo", text: "Establecer puntos de revisión para los siguientes meses." },
     ],
     faqs: [
       { q: "¿Esto es asesoría legal?", a: "No. El apoyo de formación presentado aquí no es asesoría legal. Podemos recomendar consultar a un abogado para preguntas legales." },
-      { q: "¿Pueden ayudar con bookkeeping después?", a: "Sí. Bookkeeping y nómina pueden contratarse como servicios separados." },
+      { q: "¿Pueden ayudar con la contabilidad después?", a: "Sí. La contabilidad y la nómina pueden contratarse como servicios separados." },
       { q: "¿Cuándo debo agendar una consulta?", a: "Es útil comenzar cuando puedes describir la actividad planeada y los propietarios, aunque todavía no hayas tomado todas las decisiones." },
     ],
   },
