@@ -18,17 +18,17 @@ const staticPages: Record<string, { locale: Locale; kind: string; title: string;
   "book": { locale: "en", kind: "book", title: "Book a Consultation", description: "Prepare to schedule a tax or business services consultation with Coastal Ledger in Santa Barbara." },
   "privacy-policy": { locale: "en", kind: "privacy", title: "Privacy Policy", description: "Demonstration privacy policy for Coastal Ledger Tax & Business Services." },
   "terms-of-service": { locale: "en", kind: "terms", title: "Terms of Service", description: "Demonstration website terms for Coastal Ledger Tax & Business Services." },
-  "es": { locale: "es", kind: "home", title: "Coastal Ledger — Impuestos y Servicios para Negocios", description: "Apoyo claro y organizado en impuestos, bookkeeping y negocios para personas y pequeños negocios de Santa Barbara." },
-  "es/servicios": { locale: "es", kind: "services", title: "Servicios de Impuestos y Negocios", description: "Explora impuestos personales y de negocios, planificación fiscal, bookkeeping, nómina, formación y apoyo ante el IRS." },
+  "es": { locale: "es", kind: "home", title: "Coastal Ledger — Impuestos y Servicios para Negocios", description: "Apoyo claro y organizado en impuestos, contabilidad y servicios empresariales para personas y pequeños negocios de Santa Barbara." },
+  "es/servicios": { locale: "es", kind: "services", title: "Servicios de Impuestos y Negocios", description: "Explora impuestos personales y de negocios, planificación fiscal, contabilidad, nómina, formación y apoyo ante el IRS." },
   "es/a-quienes-ayudamos": { locale: "es", kind: "who", title: "A Quiénes Ayudamos", description: "Apoyo fiscal y de negocios para personas, familias, contratistas y pequeños negocios." },
-  "es/recursos": { locale: "es", kind: "resources", title: "Recursos de Impuestos y Negocios", description: "Listas prácticas de demostración para impuestos, registros, bookkeeping y consultas." },
+  "es/recursos": { locale: "es", kind: "resources", title: "Recursos de Impuestos y Negocios", description: "Listas prácticas de demostración para impuestos, registros, contabilidad y consultas." },
   "es/nosotros": { locale: "es", kind: "about", title: "Nosotros", description: "Conoce el enfoque claro, organizado y bilingüe de Coastal Ledger Tax & Business Services." },
   "es/resenas": { locale: "es", kind: "reviews", title: "Testimonios de Ejemplo", description: "Testimonios demostrativos sobre una experiencia organizada, profesional y accesible." },
-  "es/preguntas-frecuentes": { locale: "es", kind: "faq", title: "Preguntas Frecuentes", description: "Respuestas sobre documentos, planificación, bookkeeping, nómina, formación, avisos del IRS, español y precios." },
+  "es/preguntas-frecuentes": { locale: "es", kind: "faq", title: "Preguntas Frecuentes", description: "Respuestas sobre documentos, planificación, contabilidad, nómina, formación, avisos del IRS, español y precios." },
   "es/contacto": { locale: "es", kind: "contact", title: "Contacto", description: "Ponte en contacto con Coastal Ledger en Santa Barbara. Formulario de demostración y enlaces de teléfono y email." },
   "es/agendar": { locale: "es", kind: "book", title: "Agenda una Consulta", description: "Prepárate para agendar una consulta de impuestos o servicios para negocios con Coastal Ledger." },
   "es/politica-de-privacidad": { locale: "es", kind: "privacy", title: "Política de Privacidad", description: "Política de privacidad demostrativa de Coastal Ledger Tax & Business Services." },
-  "es/terminos-de-servicio": { locale: "es", kind: "terms", title: "Términos de Servicio", description: "Términos demostrativos del website de Coastal Ledger Tax & Business Services." },
+  "es/terminos-de-servicio": { locale: "es", kind: "terms", title: "Términos de Servicio", description: "Términos demostrativos del sitio web de Coastal Ledger Tax & Business Services." },
 };
 
 function resolve(path: string[]) {
