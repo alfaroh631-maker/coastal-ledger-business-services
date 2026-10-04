@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { LangSetter } from "@/components/lang-setter";
+import { ChatWidgetLoader } from "@/components/chat-widget-loader";
 import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -30,5 +31,5 @@ const schema = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><LangSetter/><Header/><main id="main">{children}</main><Footer/><Script id="business-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}/></body></html>;
+  return <html lang="en"><body><LangSetter/><ChatWidgetLoader/><Header/><main id="main">{children}</main><Footer/><Script id="business-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}/><Script src="https://link.mganexusgo.com/js/external-tracking.js" data-tracking-id="tk_d7c11b4cd2a54b9692e6d7e411f9823a" strategy="afterInteractive"/></body></html>;
 }
