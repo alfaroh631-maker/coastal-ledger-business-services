@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, CheckIcon } from "@/components/icons";
+import { ArrowRight, ArrowUpRight, CalendarIcon, CheckIcon, FolderIcon, LedgerIcon, ShieldIcon } from "@/components/icons";
 import { type Locale } from "@/lib/site";
 import { serviceHref, type Service } from "@/lib/services";
 
@@ -46,8 +46,16 @@ export function InnerHero({ locale, eyebrow, title, intro, image, alt, breadcrum
 }
 
 export function ServiceCard({ service, locale, featured = false }: { service: Service; locale: Locale; featured?: boolean }) {
+  const ServiceIcon = service.key === "planning" || service.key === "payroll"
+    ? CalendarIcon
+    : service.key === "irs"
+      ? ShieldIcon
+      : service.key === "bookkeeping" || service.key === "business"
+        ? LedgerIcon
+        : FolderIcon;
+
   return <article className={`service-card ${featured ? "featured" : ""}`}>
-    <div className="service-card-top"><span>{service.accent}</span><span className="service-line"/></div>
+    <div className="service-card-top"><span className="service-card-icon"><ServiceIcon/></span><span>{service.accent}</span><span className="service-line"/></div>
     <h3>{service.title}</h3><p>{service.summary}</p>
     <TextLink href={serviceHref(locale, service)}>{locale === "en" ? "Explore this service" : "Conoce este servicio"}</TextLink>
   </article>;
