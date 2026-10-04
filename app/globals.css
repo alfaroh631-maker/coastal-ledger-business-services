@@ -370,10 +370,10 @@ p { color: var(--muted); }
 }
 
 @media (max-width: 580px) {
-  body { font-size: 15px; }.container { width: calc(100% - 28px); }.section { padding: 48px 0; }
+  body { max-width: 100%; overflow-x: clip; font-size: 15px; }.container { width: calc(100% - 28px); }.section { padding: 48px 0; }
   .utility-inner > span:first-child { max-width: 210px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }.brand { min-width: 0; }.brand-copy b { font-size: 1.06rem; }.brand-copy small { font-size: .44rem; }.brand-mark { width: 28px; }.language-switch { display: flex; gap: 3px; font-size: .62rem; }.nav-actions { gap: 10px; }
   .mobile-services { grid-template-columns: 1fr; }
-  .hero-copy h1 { font-size: clamp(2.65rem, 12vw, 3.8rem); }.hero-actions { display: grid; }.hero-actions .button { width: 100%; }.home-hero { min-height: 610px; }.hero-content { padding-top: 175px; padding-bottom: 38px; }.hero-overlay { background: linear-gradient(0deg, rgba(245,249,252,1) 0%, rgba(245,249,252,.96) 49%, rgba(234,243,249,.18) 83%); }
+  .home-hero, .hero-content, .hero-copy { width: 100%; min-width: 0; max-width: 100%; }.hero-copy h1, .hero-copy h1 em, .hero-copy > p { max-width: 100%; overflow-wrap: break-word; }.hero-copy h1 br { display: none; }.hero-copy h1 em { display: block; }.hero-copy h1 { font-size: clamp(2.65rem, 12vw, 3.8rem); }.hero-actions { display: grid; }.hero-actions .button { width: 100%; }.home-hero { min-height: 610px; }.hero-content { padding-top: 175px; padding-bottom: 38px; }.hero-overlay { background: linear-gradient(0deg, rgba(245,249,252,1) 0%, rgba(245,249,252,.96) 49%, rgba(234,243,249,.18) 83%); }
   .trust-strip .container > div { gap: 8px; font-size: .56rem; }
   .section-title-row { display: grid; gap: 20px; }.audience-grid, .service-grid.four, .service-grid.two, .tax-comparison, .three-step, .value-grid, .process-grid, .checklist-module, .cycle-module { grid-template-columns: 1fr; }
   .audience-grid article { min-height: auto; }.audience-grid article > span { margin-bottom: 28px; }
