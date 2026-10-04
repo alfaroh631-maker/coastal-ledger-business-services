@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarIcon, FolderIcon, LedgerIcon, MailIcon, PhoneIcon, PinIcon, ShieldIcon } from "@/components/icons";
+import { BookingCalendar } from "@/components/booking-calendar";
+import { ContactForm } from "@/components/contact-form";
 import { ButtonLink, CheckList, Eyebrow, FaqList, FinalCta, ImageFeature, InnerHero, SectionHead, ServiceCard, TextLink } from "@/components/ui";
-import { serviceHref, serviceOrder, servicesByLocale, type ServiceKey } from "@/lib/services";
+import { serviceHref, servicesByLocale, type ServiceKey } from "@/lib/services";
 import { site, type Locale } from "@/lib/site";
 
 const audienceIcons = ["01", "02", "03", "04", "05", "06"];
@@ -191,7 +193,7 @@ export function FaqPage({ locale }: { locale: Locale }) {
     { q: "¿Pueden ayudarme a iniciar un negocio?", a: "Podemos ayudar con pasos organizativos y fiscales dentro de nuestro alcance. Este servicio no es asesoría legal y puede ser necesario consultar a un abogado." },
     { q: "¿Pueden ayudar con un aviso del IRS?", a: "Podemos revisar el aviso, organizar la información relacionada y conversar sobre el alcance apropiado. No se garantizan resultados." },
     { q: "¿Ofrecen servicios en español?", a: "Sí. El contenido y la experiencia de servicio están disponibles en inglés y español." },
-    { q: "¿Cómo agendo una consulta?", a: "Visita la página Agenda una Consulta. Por ahora, el calendario está marcado como demostración y se conectará en una fase posterior." },
+    { q: "¿Cómo agendo una consulta?", a: "Visita la página Agenda una Consulta y selecciona directamente una fecha y hora disponibles." },
     { q: "¿Cuánto cuestan los servicios?", a: "El precio depende del servicio y de la complejidad del trabajo. Una consulta puede ayudar a determinar el alcance apropiado." },
   ] : [
     { q: "What documents should I bring for tax preparation?", a: "The list depends on your situation. It commonly includes income documents, relevant expense records, identification and information about major changes. A prior return may also be helpful." },
@@ -202,7 +204,7 @@ export function FaqPage({ locale }: { locale: Locale }) {
     { q: "Can you help me start a business?", a: "We can assist with organizational and tax-related steps within our scope. This service is not legal advice, and consultation with an attorney may be appropriate." },
     { q: "Can you help with an IRS notice?", a: "We can review the notice, organize related information and discuss an appropriate scope of assistance. Outcomes are not guaranteed." },
     { q: "Do you offer services in Spanish?", a: "Yes. Website content and the service experience are available in English and Spanish." },
-    { q: "How do I schedule a consultation?", a: "Visit the Book a Consultation page. The calendar is currently marked as a demonstration and will be connected in a later phase." },
+    { q: "How do I schedule a consultation?", a: "Visit the Book a Consultation page and select an available date and time directly." },
     { q: "How much do services cost?", a: "Pricing depends on the service and complexity of the work. A consultation can help determine the appropriate scope of service." },
   ];
   return <>
@@ -214,10 +216,9 @@ export function FaqPage({ locale }: { locale: Locale }) {
 
 export function ContactPage({ locale }: { locale: Locale }) {
   const es = locale === "es";
-  const s = servicesByLocale[locale];
   return <>
     <InnerHero locale={locale} eyebrow={es ? "Contacto" : "Contact"} title={es ? "Comienza con una conversación clara." : "Start with a clear conversation."} intro={es ? "Cuéntanos de forma general qué necesitas. No incluyas números de Seguro Social, identificaciones fiscales, números de cuenta ni información confidencial." : "Tell us generally what you need. Do not include Social Security numbers, tax IDs, account numbers or confidential information."} breadcrumbs={[{ label: es ? "Contacto" : "Contact" }]}/>
-    <section className="section"><div className="container contact-grid"><div className="contact-panel"><Eyebrow light>{es ? "Información directa" : "Direct information"}</Eyebrow><h2>{es ? "Estamos aquí para ayudarte a encontrar el siguiente paso." : "We are here to help you find the next step."}</h2><ul><li><PhoneIcon/><div><span>{es ? "Teléfono" : "Phone"}</span><a href={site.phoneHref}>{site.phoneDisplay}</a></div></li><li><MailIcon/><div><span>Email</span><a href={`mailto:${site.email}`}>{site.email}</a></div></li><li><PinIcon/><div><span>{es ? "Área de servicio" : "Service area"}</span><p>{es ? "Santa Barbara, Goleta, Montecito, Carpinteria y comunidades cercanas" : site.serviceArea}</p></div></li></ul><p className="demo-fineprint">{es ? "Coastal Ledger es un negocio ficticio creado para demostración." : "Coastal Ledger is a fictional business created for demonstration."}</p></div><form className="demo-form"><div className="demo-notice"><ShieldIcon/><div><b>{es ? "Formulario de demostración" : "Demonstration form"}</b><p>{es ? "Este formulario todavía no transmite información. Se conectará a GoHighLevel en una fase posterior." : "This form does not transmit information yet. It will be connected to GoHighLevel in a later phase."}</p></div></div><div className="field-row"><label>{es ? "Nombre completo" : "Full Name"}<input type="text" name="name" autoComplete="name"/></label><label>{es ? "Teléfono" : "Phone"}<input type="tel" name="phone" autoComplete="tel"/></label></div><label>Email<input type="email" name="email" autoComplete="email"/></label><div className="field-row"><label>{es ? "Servicio de interés" : "Service Interested In"}<select name="service" defaultValue=""><option value="" disabled>{es ? "Selecciona un servicio" : "Select a service"}</option>{serviceOrder.map((key) => <option key={key}>{s[key].title}</option>)}</select></label><label>{es ? "Persona o negocio" : "Individual or Business"}<select name="client-type" defaultValue=""><option value="" disabled>{es ? "Selecciona una opción" : "Select one"}</option><option>{es ? "Persona / Familia" : "Individual / Family"}</option><option>{es ? "Negocio" : "Business"}</option></select></label></div><label>{es ? "Idioma preferido" : "Preferred Language"}<select name="language" defaultValue="English"><option>English</option><option>Español</option></select></label><label>{es ? "Mensaje" : "Message"}<textarea name="message" rows={5}/></label><button className="button" type="button" disabled>{es ? "Demo — No envía información" : "Demo — Does not submit"}</button></form></div></section>
+    <section className="section"><div className="container contact-grid"><div className="contact-panel"><Eyebrow light>{es ? "Información directa" : "Direct information"}</Eyebrow><h2>{es ? "Estamos aquí para ayudarte a encontrar el siguiente paso." : "We are here to help you find the next step."}</h2><ul><li><PhoneIcon/><div><span>{es ? "Teléfono" : "Phone"}</span><a href={site.phoneHref}>{site.phoneDisplay}</a></div></li><li><MailIcon/><div><span>Email</span><a href={`mailto:${site.email}`}>{site.email}</a></div></li><li><PinIcon/><div><span>{es ? "Área de servicio" : "Service area"}</span><p>{es ? "Santa Barbara, Goleta, Montecito, Carpinteria y comunidades cercanas" : site.serviceArea}</p></div></li></ul><p className="demo-fineprint">{es ? "Coastal Ledger es un negocio ficticio creado para demostración." : "Coastal Ledger is a fictional business created for demonstration."}</p></div><ContactForm locale={locale}/></div></section>
   </>;
 }
 
@@ -225,7 +226,7 @@ export function BookPage({ locale }: { locale: Locale }) {
   const es = locale === "es";
   return <>
     <InnerHero locale={locale} eyebrow={es ? "Tu siguiente paso" : "Your next step"} title={es ? "Agenda una Consulta" : "Book a Consultation"} intro={es ? "Reserva un espacio para explicar lo que necesitas y conversar sobre un alcance apropiado." : "Reserve time to explain what you need and discuss an appropriate scope of service."} breadcrumbs={[{ label: es ? "Agenda una Consulta" : "Book a Consultation" }]}/>
-    <section className="section booking-section"><div className="container booking-grid"><div className="booking-info"><Eyebrow>{es ? "Antes de agendar" : "Before you schedule"}</Eyebrow><h2>{es ? "Una consulta enfocada comienza con contexto básico." : "A focused consultation begins with basic context."}</h2><CheckList items={es ? ["El servicio o asunto que quieres conversar", "Si la necesidad es personal o de negocio", "Cualquier fecha importante que conozcas", "Tu idioma preferido"] : ["The service or issue you want to discuss", "Whether the need is personal or business", "Any important date you already know", "Your preferred language"]}/><div className="privacy-reminder"><ShieldIcon/><p>{es ? "No compartas información confidencial en una solicitud inicial." : "Do not share confidential information in an initial scheduling request."}</p></div></div><div className="calendar-placeholder"><div className="demo-pill">{es ? "CALENDARIO DEMO" : "DEMO CALENDAR"}</div><CalendarIcon/><h2>{es ? "El calendario se conectará aquí." : "The calendar will be connected here."}</h2><p>{es ? "Esta página está preparada para recibir el calendario de GoHighLevel en una fase posterior. No se ha creado un sistema alternativo de reservaciones." : "This page is prepared for a GoHighLevel calendar in a later phase. No alternative booking system has been created."}</p><div className="calendar-lines" aria-hidden="true"><i/><i/><i/></div><Link className="text-link" href={es ? "/es/contacto" : "/contact"}>{es ? "Usa la página de contacto" : "Use the contact page"}<ArrowRight/></Link></div></div></section>
+    <section className="section booking-section"><div className="container booking-grid"><div className="booking-info"><Eyebrow>{es ? "Antes de agendar" : "Before you schedule"}</Eyebrow><h2>{es ? "Una consulta enfocada comienza con contexto básico." : "A focused consultation begins with basic context."}</h2><CheckList items={es ? ["El servicio o asunto que quieres conversar", "Si la necesidad es personal o de negocio", "Cualquier fecha importante que conozcas", "Tu idioma preferido"] : ["The service or issue you want to discuss", "Whether the need is personal or business", "Any important date you already know", "Your preferred language"]}/><div className="privacy-reminder"><ShieldIcon/><p>{es ? "No compartas información confidencial en una solicitud inicial." : "Do not share confidential information in an initial scheduling request."}</p></div></div><BookingCalendar locale={locale}/></div></section>
   </>;
 }
 
@@ -234,16 +235,16 @@ export function LegalPage({ locale, type }: { locale: Locale; type: "privacy" | 
   const privacy = type === "privacy";
   const title = privacy ? (es ? "Política de Privacidad" : "Privacy Policy") : (es ? "Términos de Servicio" : "Terms of Service");
   const sections = privacy ? (es ? [
-    ["Sitio de demostración", "Este sitio web representa un negocio ficticio. Los formularios y el calendario no transmiten información mientras estén marcados como demostración."],
-    ["Información de contacto", "Los enlaces de teléfono y correo se muestran para fines de demostración. No envíes números de Seguro Social, identificaciones fiscales, números de cuenta u otra información confidencial."],
-    ["Uso futuro de formularios", "Si los formularios se conectan en una fase posterior, esta política deberá actualizarse para describir qué información se recopila, cómo se utiliza y cómo se protege."],
-    ["Servicios externos", "El hosting, análisis o futuras integraciones pueden utilizar proveedores externos. La versión final deberá identificar prácticas aplicables cuando esas herramientas estén confirmadas."],
+    ["Sitio de demostración", "Este sitio web representa un negocio ficticio. El formulario de contacto y el calendario están conectados para demostrar una experiencia funcional."],
+    ["Información que se envía", "Al enviar el formulario o reservar una consulta, los datos que proporciones se transmiten al sistema de gestión de clientes y calendario. No envíes números de Seguro Social, identificaciones fiscales, números de cuenta ni documentos confidenciales."],
+    ["Uso de la información", "La información general enviada se utiliza para registrar la solicitud, organizar el seguimiento y administrar la reserva de una consulta."],
+    ["Servicios externos", "El sitio utiliza proveedores externos de hosting, gestión de contactos, chat y reservaciones para ofrecer estas funciones."],
     ["Cambios", "Esta política demostrativa puede cambiar cuando el sitio web se adapte a un negocio real o incorpore servicios conectados."],
   ] : [
-    ["Demonstration website", "This website represents a fictional business. Forms and scheduling do not transmit information while marked as demonstrations."],
-    ["Contact information", "Phone and email links are shown for demonstration. Do not send Social Security numbers, tax IDs, account numbers or other confidential information."],
-    ["Future form use", "If forms are connected in a later phase, this policy must be updated to describe what information is collected, how it is used and how it is protected."],
-    ["External services", "Hosting, analytics or future integrations may use external providers. A final version should identify applicable practices when those tools are confirmed."],
+    ["Demonstration website", "This website represents a fictional business. The contact form and calendar are connected to demonstrate a functional experience."],
+    ["Information submitted", "When you submit the form or book a consultation, the information you provide is transmitted to the customer-management and calendar system. Do not send Social Security numbers, tax IDs, account numbers or confidential documents."],
+    ["Use of information", "General information submitted is used to record the request, organize follow-up and manage a consultation booking."],
+    ["External services", "The website uses external hosting, customer-management, chat and booking providers to deliver these functions."],
     ["Changes", "This demonstration policy may change if the website is adapted to a real business or connected services are added."],
   ]) : (es ? [
     ["Propósito demostrativo", "Coastal Ledger Tax & Business Services es un negocio ficticio. Este sitio web es un modelo de diseño y contenido."],
